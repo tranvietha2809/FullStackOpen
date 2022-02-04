@@ -2,16 +2,17 @@ import React from "react";
 
 /** 
  * props:
- * @param {string} part
- * @param {string} excercises
+ * @param {Array} content
 */
 const Content = (props) => {
     return(
+        props.content.map((value) => 
         <div>
-            <p>
-                {props.part} {props.exercises}
-            </p>
+        <p>
+            {value.part} {value.exercises}
+        </p>
         </div>
+        )
     )
 };
 
