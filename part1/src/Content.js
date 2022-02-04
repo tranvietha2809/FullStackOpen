@@ -9,7 +9,7 @@ const Content = (props) => {
         props.content.map((value) => 
         <div>
         <p>
-            {value.part} {value.exercises}
+            {value.name} {value.exercises}
         </p>
         </div>
         )

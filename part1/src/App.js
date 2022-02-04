@@ -1,36 +1,40 @@
-import React from 'react'
-import Content from './Content';
-import Header from './Header';
-import Total from './Total';
+import React , {useState} from 'react'
 const App = () => {
-  const course = 'Half Stack application development'
-  const part1 = 'Fundamentals of React'
-  const exercises1 = 10
-  const part2 = 'Using props to pass data'
-  const exercises2 = 7
-  const part3 = 'State of a component'
-  const exercises3 = 14
+    const [good, setGood] = useState(0)
+    const [neutral, setNeutral] = useState(0)
+    const [bad, setBad] = useState(0)
 
   return (
     <div>
-      <Header course = {course}/>
-      <Content content = {
-        [
-          {
-            part: part1,
-            exercises : exercises1
-          },
-          {
-            part: part2,
-            exercises : exercises2
-          },
-          {
-            part: part3,
-            exercises : exercises3
-          }
-        ]
-      }/>
-      <Total exercises = {[exercises1, exercises2, exercises3]}/>
+      <div>
+        <button onClick={() => {
+            setGood(() => good +1);
+          }}>good</button>
+        <button onClick={() => {
+            setNeutral(() => neutral + 1);
+          }}>neutral</button>
+        <button onClick={() => {
+            setBad(() => bad + 1);
+          }}>bad</button>
+      </div>
+      <div>
+        <h1> statistics </h1>
+      </div>
+      <div>
+        <p>good {good}</p>
+      </div>
+      <div>
+        <p>neutral {neutral}</p>
+      </div>
+      <div>
+        <p>bad {bad}</p>
+      </div>
+      <div>
+        <p>all {good + neutral + bad}</p>
+      </div>
+      <div>
+        <p>average {(good - bad) / (good + neutral + bad)}</p>
+      </div>
     </div>
   )
 }

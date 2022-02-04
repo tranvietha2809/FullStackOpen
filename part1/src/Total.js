@@ -1,7 +1,11 @@
 const Total = (props) => {
+    var total = 0;
+    props.exercises.forEach(exercise => {
+        total += exercise.exercises
+    });
     return <div> 
         <p>
-            Number of exercises {props.exercises.reduce((prev, current) => prev + current)}
+            Number of exercises {total}
         </p> 
     </div>
 }
